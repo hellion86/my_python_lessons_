@@ -75,3 +75,8 @@ print(l)'''
 '''for i in range(10,0,-1):
 	print(i)
 '''
+
+seq = [1,34,5,6,4,6,]
+
+for s,item in enumerate(seq):
+	print(s,item)
