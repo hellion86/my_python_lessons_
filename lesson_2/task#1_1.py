@@ -40,8 +40,20 @@ for s in matrix:
     for j in s:
         print(j)
 '''
+s = 0
 
-m = [23.4,23.45,12.67,87.9,34.33,57.1,45.89]
+m = [1,2,3,4,5]
 for i in range(len(m)):
     print(i,':',m[i])
+    s = m[i] + s
+    print(s)
     
+
+
+def listsum(*numList):
+   if len(numList) == 1:
+        return numList[0]
+   else:
+        return int(numList[0]) + int(listsum(numList[1:]))
+
+listsum(1,2,3,4,5)

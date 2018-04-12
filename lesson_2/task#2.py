@@ -22,26 +22,56 @@ print(kk[0],kk[len(kk)-1])'''
 #m = test.split(":")
 #print(m)
 
-#for i in range(1,100):
-#    if i % 7 == 0:
-#        print(i)
-
-'''matrix = [
-        [23,5,7],
-        [33,54,86],
-        [1,23,67],
-        [57,56,34]
-    ]
-
-for i in matrix:
-    print(i)
-
-for s in matrix:
-    for j in s:
-        print(j)
+'''for i in range(1,100):
+    if i % 7 == 0:
+        print("Это гуд = ", i)
+    else:
+    	print("Это совсем не гуд = ", i)
 '''
 
-m = [23.4,23.45,12.67,87.9,34.33,57.1,45.89]
+import random
+
+row = 4
+table = 3
+matrix = []
+
+for r in range(row):
+	matrix.append([])
+	for t in range(table):
+		matrix[r].append(random.randint(0, 10))
+
+print('Vsya matrica', matrix)
+print()
+
+print('Stroki')
+for r in range(row):
+	for t in range(table):
+		print(matrix[r][t], end='_')
+	print()
+print()
+
+print('Stolbci')
+for t in range(table):
+	for r in range(row):
+		print(matrix[r][t], end='_')
+	print()
+
+    
+
+
+'''m = [23.4,23.45,12.67,87.9,34.33,57.1,45.89]
 for i in range(len(m)):
     print(i,':',m[i])
-    
+'''
+
+'''l = ['dfg','to-delete','sdf','4rf','to-delete','erfd','to-delete'] 
+
+for i in l:
+	if i == 'to-delete':
+		l.pop(l.index(i))
+
+print(l)'''
+
+'''for i in range(10,0,-1):
+	print(i)
+'''
