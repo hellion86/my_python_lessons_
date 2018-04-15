@@ -28,7 +28,7 @@ print(kk[0],kk[len(kk)-1])'''
     else:
     	print("Это совсем не гуд = ", i)
 '''
-
+'''
 import random
 
 row = 4
@@ -56,7 +56,7 @@ for t in range(table):
 		print(matrix[r][t], end='_')
 	print()
 
-    
+    '''
 
 
 '''m = [23.4,23.45,12.67,87.9,34.33,57.1,45.89]
@@ -75,8 +75,15 @@ print(l)'''
 '''for i in range(10,0,-1):
 	print(i)
 '''
+from functools import reduce
 
-seq = [1,34,5,6,4,6,]
+seq = [1,2,5,6,4,6,]
 
-for s,item in enumerate(seq):
-	print(s,item)
+
+s = reduce(lambda res, x: res*x, seq)
+
+print(s)
+
+#for s,item in enumerate(seq):
+#	ss = item * seq[s]
+#	print(item ,':' ,s)

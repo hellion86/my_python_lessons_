@@ -38,32 +38,56 @@ def obrabotka(x):
 	return 1 / x
 
 #obrabotka(int('d'))
+import random
+
+def obarbota1():
+	execption = random.choice([ZeroDivisionError,TypeError,RuntimeError])
+	try:
+		 raise execption
+	except ZeroDivisionError:
+		print("Delenie na nol`")
+	except TypeError:
+		print("Neverniy tip dannih")
+	except RuntimeError:
+		print("Ya vas ne ponimat`")
+
+print(obarbota1())
 
 def spisok(s):
-	try:
-		for i in s: 
-			if type(i) == int:
-				s = sorted(s)
-		return s 
-	except ValueError as e:
-		print('It is not a list!',e)
-		return s
+	mm = list()
+	for i in s: 
+		if isinstance(i,int):
+			mm.append(i)
+		else:
+			raise ValueError('It is not a list!')
+	return sorted(mm)
 
 print(spisok((45,3,0,5,7,4,3)))
 
-
-def listsum(*numList):
+#дедовский способ перемножить элеметны списка
+'''def listsum(*numList):
     x = 1
     for i in range(len(numList)):
     	x = x * numList[i]
+    	print(x,numList[i])
     return x 
    
-print(listsum(1,2,3,4,5))
+print(listsum(1,2,3,4,5))'''
+#новый способ
+from functools import reduce 
 
-'''def slovar(r):
-	for i in r:
-	    r[i] = str(r[i])
-    return r
+lst = [1,2,3,4]
 
-print(slovar({s:1,b:2,t:4}))'''
-	
+print(reduce(lambda res, x : x * res, lst))
+
+def slovar(r):
+	ss = dict()
+	for i,key in r.items():
+		ss[str(key)] = key
+	return ss
+
+print(slovar({'s':436,'b':6547,'t':4564}))
+
+slovar1 = {'s1':436,'s2':6547,'s3':4564}
+for x,y in slovar1.items():
+	print(x,y)
