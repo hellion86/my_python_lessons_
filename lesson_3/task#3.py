@@ -69,15 +69,3 @@ def slipper(*str, g=':'):
     return l
 
 print(slipper('123','456','vhngf','ghn','h','h','m','j','BOOM'))
-
-def strings_concat(*args, glue=':'):
-	out_string = '';
-	idx = 0;
-	for item in args :
-		if len(item) > 2 :
-			out_string += (glue + item) if idx else item;
-			idx += 1;
-		
-	return out_string;	
-
-print(strings_concat('as', ',rf,,ert','ert4','adsadsdad', 'asdasdsda')); 

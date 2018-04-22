@@ -1,0 +1,13 @@
+import random
+text = ['elekrichesvto','mama','kofe','vecher','beznadega','popitka']
+lives = 10
+
+print('Eto igra nazivaetsa "Vicekica", u vas 10 jizney chtobi otgadat` vse slovo, vvodite posimvolno!')
+quest = random.choice(text) 
+
+print(quest)
+temp = '-' * len(quest)
+print(temp)
+while lives <= 10:
+	bukva = input('vvodite vashu bukvu: ')
+ 
