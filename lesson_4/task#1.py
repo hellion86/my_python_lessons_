@@ -1,27 +1,38 @@
 
 import random
 
-quest = int(random.randint(1,100))
+def quest():
+	return int(random.randint(1,100))
  
-
-print('Ya zagadal chislo, poproby`te otgadat`!')
-print()
-num = 0 
-while True:
+def answer(num):
 	try:
 		answer = int(input('Vvedite vashu cifru:'))
-		if answer > quest:
+		if answer > num:
 			print('Moe chislo menshe')
-			num += 1
-		elif answer < quest:
+		elif answer < num:
 			print('Moe chislo bolshe')
-			num += 1
+			return 0
 		else:
-			print('Vi ugadali!, moe chsilo bilo {}, vi ego otgadali za {} popitok'.format(quest,num))
-			break
-	except TypeError:
+			print('Vi ugadali!, moe chsilo bilo {}'.format(answer))
+			return 1
+	except Exception:
 		print('Vi vveli ne chislo!')
-		num +=1
-	except ValueError:
-		print('Vi vveli ne chislo!')
-		num +=1
+		
+def game(num):
+	while not answer(num):
+		print('*************')
+
+game(quest())
+try:
+	while input('Play again?: (y/n)').lower() == 'y':
+		game(quest())
+except Exception:
+	print('Bad input')
+
+print('Bye')
+
+
+
+
+
+
