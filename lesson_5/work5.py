@@ -58,7 +58,7 @@ t = TestClass('red')
 t1 = TestClass('white')
 
 print(t.coror,t1.coror)
-'''
+ 
 
 class Table:
     def __init__(self, number_of_legs):
@@ -78,3 +78,39 @@ print(c, c.color)
 c1 = Chair('red')
 print(c1.color)
 print('variable c did not change!', c.color)
+ 
+
+
+class Parent(object):
+    def __init__(self):
+        print('Parent inited')
+        self.value = 'Parent'
+
+    def do(self):
+        print('Parent do(): {}'.format(self.value))
+
+
+class Child(Parent):
+    def __init__(self):
+        print('Child inited')
+        self.value = 'Child'
+
+parent = Parent()
+parent.do()
+
+child = Child()
+child.do()
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
