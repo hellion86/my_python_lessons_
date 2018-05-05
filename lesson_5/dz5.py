@@ -49,10 +49,16 @@ pr1.formatted_log('adsdfsdfsdfsdfsdf','sdfsdf')
 #task 3
 
 class Animal():
-	def __init__(self, anim_type, name, danger):
+	def __init__(self, name, danger):
 		self.name = name
-		self.type = anim_type
+		#self.type = anim_type
 		self.danger = danger
+	
+	def description(self):
+		if self.danger:
+			print('It is {}, very danger for Human'.format(self.name))
+		else:
+			print('It is {}, not danger for Human'.format(self.name))
 
 
 
@@ -60,4 +66,20 @@ class Human():
 	def __init__(self, name):
 		self.name = name
 
-		
+	def is_danger(self, animal):
+		if animal.danger == True:
+			print('It is {}, very danger for {}'.format(animal.name,self.name))
+		else:
+			print('It is {}, not danger for {}'.format(animal.name,self.name))
+
+
+animal1 = Animal('leopard',True)
+animal2 = Animal('Tiger', True)
+animal3 = Animal('Turtle', False)
+
+animal1.description()
+animal3.description()
+
+human1 = Human('Oleg')
+human1.is_danger(animal1)
+human1.is_danger(animal3)
